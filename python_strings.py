@@ -153,3 +153,26 @@ print(words)
 words = ["Let", "me", "speak", "from", "my", "heart", "in", "English"]
 sentence = "|||".join(words)
 print(sentence)
+
+#Create a function sum_primes() that takes a list of numbers and
+# returns the sum of all prime numbers in the list.
+#Notes
+#Given numbers won't exceed 101.
+#A prime number is a number which has exactly two divisors.
+
+def is_prime(n):
+    if n<2:
+        return False
+    for i in range(2, int(n ** 0.5)+1):
+        if n % i == 0:
+            return False
+    return True
+
+print(is_prime(25))
+print(is_prime(19))
+def sum_primes(my_list):
+    prime_sum = 0
+    for num in my_list:
+        if is_prime(num):
+            prime_sum += num
+    return prime_sum
